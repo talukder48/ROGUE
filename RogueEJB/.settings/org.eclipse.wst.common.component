@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="RogueEJB">
+        <wb-resource deploy-path="/" source-path="/ejbModule" tag="defaultRootSource"/>
+        <property name="java-output-path" value="/RogueEJB/build/classes"/>
+        <property name="ClientProject" value="RogueEJBClient"/>
+        <property name="ClientJARURI" value="RogueEJBClient.jar"/>
+    </wb-module>
+</project-modules>
