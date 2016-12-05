@@ -1,5 +1,7 @@
 package pkg.RogueSession;
 
+import java.util.Map;
+
 public interface ServiceRemote {
-	public long add(long i, long j);
+	public Map add(Map map);
 }

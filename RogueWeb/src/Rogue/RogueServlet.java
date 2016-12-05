@@ -20,9 +20,14 @@ public class RogueServlet extends HttpServlet {
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			Delegator d= new Delegator();				
-				Map<String, String> map=new HashMap<String, String>();
+				Map map=new HashMap();
 				map.put("JBName",JBNames.___ServiceSessionBN);
-				d.Delegation(map);				
+				map.put("Class", "Service");
+				map.put("n1", 10);
+				map.put("n2", 20);
+				map=d.Delegation(map);	
+				System.out.println(map.get("RES"));
+				
 			/*PrintWriter out = response.getWriter();
 			out.print("<html><body>"
 					+ "<h1>"
