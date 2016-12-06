@@ -6,11 +6,44 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 <%@page import="Rogue.RogueServlet"%>
+<link rel="stylesheet" href="styles.css">
 </head>
+<script type="text/javascript">
+
+
+</script>
 <body>
-<h1>Hi, Click ME</h1>
-<form method=post action="RogueServlet">
-<button>Click???</button>
-</form>
+<div id='mp'>
+
+ </div>
+ <div id='bd'> 
+ <h1 >Welcome to Rogue Application </h1>
+ <form method=post action="RogueServlet">
+ 	<table>
+ 	<tr> 
+ 		<td >User Id:</td>
+ 		<td><input id="User" type="text"/></td>
+ 	</tr>
+ 	
+ 	<tr> 
+ 	<td>Password</td>
+ 	<td><input id="Pass" type="password"/></td>
+ 	</tr>
+ 	
+ 	<tr> 
+ 	<td>Sure??</td>
+ 	<td><button>Press Me</button> </td>
+ 	</tr>
+ 		
+ 	</table>
+            	
+ </form>
+ </div>
+ 
+<div id='mf'>
+</div>
+
+
+
 </body>
 </html>

@@ -1,0 +1,26 @@
+#mp
+{
+ 	background-color: #99f0ec;
+	width:350px;
+	height:800px;
+	float:left;
+}
+#bd 
+{
+	background-color: #99f0ec;
+	width:700px;
+	height:800px;
+	float:left;
+}
+#mf
+{
+	background-color: #99f0ec;
+	width:230px;
+	height:800px;
+	float:left;
+}
+.h1
+{
+	background-color: #c0c0c0;
+	float:center;
+}
