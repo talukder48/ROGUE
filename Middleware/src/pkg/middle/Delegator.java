@@ -6,8 +6,6 @@ import javax.naming.InitialContext;
 import java.lang.reflect.Method;
 
 
-
-
 import pkg.RogueSession.*;
 public class Delegator 
 {
