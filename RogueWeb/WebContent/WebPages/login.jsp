@@ -4,14 +4,22 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>login</title>
 <%@page import="Rogue.RogueServlet"%>
 <link rel="stylesheet" href="styles.css">
-</head>
+<script type="text/javascript" src=""></script>
 <script type="text/javascript">
-
-
+$(document).ready(function() {                        
+	                $('#submit').click(function(event) {  
+	                    var username=$('#User').val();
+	                 $.get('RogueServlet',{user:username},function(responseText) { 
+	                        $('#welcometext').text(responseText);         
+	                    });
+	                });
+	            });
 </script>
+</head>
+
 <body>
 <div id='mp'>
 
@@ -32,18 +40,18 @@
  	
  	<tr> 
  	<td>Sure??</td>
- 	<td><button>Press Me</button> </td>
+ 	<td><button id="submit" >Press Me</button> </td>
  	</tr>
  		
  	</table>
-            	
+      	
  </form>
  </div>
  
 <div id='mf'>
 </div>
 
-
+<div id="welcometext"></div>
 
 </body>
 </html>
