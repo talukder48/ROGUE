@@ -21,6 +21,9 @@ public class DBConector {
 	           e.printStackTrace();
 	    	}catch (SQLException e){
 	           e.printStackTrace();
+
+	    	}catch(Exception e){
+	    	   e.getLocalizedMessage();
 	    	}
 	    return con;
 	}
