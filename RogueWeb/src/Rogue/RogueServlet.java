@@ -6,8 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
-
 import javax.naming.InitialContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,16 +32,12 @@ public class RogueServlet extends HttpServlet {
 				map.put("Class", "Service");
 				map.put("n1", 10);
 				map.put("n2", 20);
-				map=d.Delegation(map);	
+				String name=request.getParameter("User");
+				String pass=request.getParameter("Pass");
+				map.put("UID",name);
+				map.put("PASS",pass);				
+				map=d.Delegation(map);					
 				System.out.println(map.get("RES"));
-				
-				/***************************************/
-				  
-				System.out.println("connected");
-				
-				
-				
-				/***************************************/
 		
 			PrintWriter out = response.getWriter();
 			out.print("<html><body>"
@@ -50,11 +46,13 @@ public class RogueServlet extends HttpServlet {
 					+ "</h1>"
 					+ "<b>Respons from HelloWorld Servlet"
 			 		+ ""
+					+map.get("RES")
 			 		+ ""
 			 		+ "</b></body></html>");
 			 out.close();
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request,response);
+		
 	}
 }

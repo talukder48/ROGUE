@@ -15,7 +15,7 @@ public class Delegator
 	public Map Delegation(Map mp)
 	{
 		__JBName=mp.get("JBName").toString();
-		__Method="add";
+		__Method="LoginCheck";
 		Map mapping=null;
 		try{
 			Context cx = new InitialContext();

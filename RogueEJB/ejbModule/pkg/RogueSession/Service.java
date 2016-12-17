@@ -20,29 +20,36 @@ public class Service implements ServiceRemote {
     	c= new Calculator();       
     }
 	@Override
-	public Map add(Map map) {
+	public Map LoginCheck(Map map) {
 		
 		long a=Long.parseLong(map.get("n1").toString());
 		long b= Long.parseLong(map.get("n2").toString());
+		String uid=map.get("UID").toString();
+		String pass=map.get("PASS").toString();
 		map.clear();
-		map.put("RES",c.Sumation(a,b));
 		DBConector db= new DBConector();
 		try{
 		    con=db.GetConnection();
+			SQL="SELECT UI.USER_ID FROM USERINFO UI "
+					+ "  WHERE UI.USER_NAME='"+uid+"'"
+					+ "  AND UI.USER_PASS='"+ pass+"'";
 			
-			SQL="select USER_ID from users";
 			stmt=con.prepareStatement(SQL);
 			rs=stmt.executeQuery();
-			if(rs.next())System.out.println(" data found");
-			else System.out.println("No data found");
+			if(rs.next())
+			{
+				map.put("RES","lOGIN SUCESSFULLY DONE FOR ID: "+rs.getString("USER_ID"));
+			}
+			else
+			{
+				map.put("RES","lOGIN NOT SUCESSFULLY DONE FOR ID: "+rs.getString("USER_ID"));	
+			}
 			
 		}catch(Exception e)
 		{
 			e.printStackTrace();
-		}
-		
-		return map;
-		
-	}
-    
+			map.put("RES","Error in Login check method");
+		}		
+		return map;		
+	}    
 }

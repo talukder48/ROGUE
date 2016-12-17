@@ -1,4 +1,4 @@
 function CreateXML()
 {
 	
-s}
+}

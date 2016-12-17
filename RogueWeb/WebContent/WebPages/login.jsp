@@ -7,17 +7,7 @@
 <title>login</title>
 <%@page import="Rogue.RogueServlet"%>
 <link rel="stylesheet" href="styles.css">
-<script type="text/javascript" src=""></script>
-<script type="text/javascript">
-$(document).ready(function() {                        
-	                $('#submit').click(function(event) {  
-	                    var username=$('#User').val();
-	                 $.get('RogueServlet',{user:username},function(responseText) { 
-	                        $('#welcometext').text(responseText);         
-	                    });
-	                });
-	            });
-</script>
+<script type="text/javascript" src="XMLHttp.js"></script>
 </head>
 
 <body>
@@ -30,12 +20,13 @@ $(document).ready(function() {                       
  	<table>
  	<tr> 
  		<td >User Id:</td>
- 		<td><input id="User" type="text"/></td>
+ 		<td><input id="User" type="text" name="User"/></td>
  	</tr>
+ 	
  	
  	<tr> 
  	<td>Password</td>
- 	<td><input id="Pass" type="password"/></td>
+ 	<td><input id="Pass" type="password" name="Pass"/></td>
  	</tr>
  	
  	<tr> 
@@ -44,8 +35,10 @@ $(document).ready(function() {                       
  	</tr>
  		
  	</table>
-      	
+      	 
  </form>
+
+	
  </div>
  
 <div id='mf'>
